@@ -3,8 +3,8 @@
 	<head>
 		<title>Khaugali home</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="css/bootstrap.css" />
-		<link rel="stylesheet" href="common.css" />
+		<link rel="stylesheet" href="../css/bootstrap.css" />
+		<link rel="stylesheet" href="../css/common.css" />
 		<style>
 			#content {
 				padding-left: 30px;
@@ -73,21 +73,5 @@
 				</div>
 			</div>
 		</div>
-		<hr class="foot" />
-		<div id="footer" class="row-fluid">
-			<div class="span8" id="links">
-				<a href="">Home</a> &VerticalBar;
-				<a href="">About Khaugali.com</a> &VerticalBar;
-				<a href="">Suggest a Restaurant</a> &VerticalBar;
-				<a href="">Contact us</a> &VerticalBar;
-				<a href="">Privacy</a> &VerticalBar;
-				<a href="">Site map</a> 
-			</div>
-			<div class="span4" id="company">
-				<p class="pull-right">&copy; MAD productions</p>
-			</div>
-		</div>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/jquery-1.9.1.js"></script>
-	</body>
-</html>
+		<?php
+			require_once 'footer.php';

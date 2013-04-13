@@ -110,8 +110,8 @@
 			<br/>
 			<div class="btn-group" >
 				<a href="resinfo.php?resid=<?php echo $resid;?>"><div class="btn ">Information</div></a>
-				<a><div class="btn ">Menu</div></a>
-				<a><div class="btn ">Photos</div></a>
+				<a href="resmenu.php"><div class="btn ">Menu</div></a>
+				<a href="respics.php"><div class="btn ">Photos</div></a>
 				<a href="resreview.php?resid=<?php echo $resid;?>"><div class="btn ">Reviews</div></a>
 			</div>
 			<!-- sub content begins from here -->
@@ -127,11 +127,11 @@
 				?>
 					<div class="row">
 						<hr />
-						<div class="span8" style="padding-left: 50px">
+						<div class="span8">
 							<i class="icon-user"></i>
 							<?php echo $row['username']; ?>
 						</div>
-						<div class="span6">
+						<div class="span4">
 						<?php $userRating = getUserAvgRating($row['username'], $resid, $connection);?>
 						<div class="rating">
 						<?php
@@ -149,10 +149,12 @@
 						</div>
 					</div>
 						<br />
-					<div>
+						<div class="span8" style="margin-left: 170px">
 						<?php echo '<pre>'.$row['review'].'</pre>'; ?>
 					</div>
+						<br />
 					<hr />
+					<br />
 				<?php		
 					}
 				?>

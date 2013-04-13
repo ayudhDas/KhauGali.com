@@ -51,8 +51,15 @@
 						<img src=" <?php echo $profilePic; ?> " alt="user" height="180" width="180" style="text-align: center;"/>
 					</div>
 					<div class="span10">
-						<form action="" method="get">
-							<h3><?php echo $name; ?></h3>
+						<form action="profile.php" method="post">
+							<div class="control-group">
+								<div class="controls">
+								<input type="text" class="input-block-level" placeholder="Full name"
+									   value ="<?php echo $name; ?>"
+									   required name="name">
+								<p class="help-block"></p>
+								</div>
+							</div>
 							<table class="table">
 								<tr>
 									<td>From : <?php ?></td>

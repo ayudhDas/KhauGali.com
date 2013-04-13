@@ -129,8 +129,8 @@
 			<br/>
 			<div class="btn-group" >
 				<a href="resinfo.php?resid=<?php echo $resid;?>"><div class="btn ">Information</div></a>
-				<a><div class="btn ">Menu</div></a>
-				<a><div class="btn ">Photos</div></a>
+				<a href="resmenu.php"><div class="btn ">Menu</div></a>
+				<a href="respics.php"><div class="btn ">Photos</div></a>
 				<a href="resreview.php?resid=<?php echo $resid;?>"><div class="btn ">Reviews</div></a>
 			</div>
 			<!-- sub content begins from here -->
@@ -205,7 +205,7 @@
 									break;
 								case 1: echo 'Non Veg';
 									break;
-								case 2: echo 'Egg';
+								case 2: echo 'Both';
 									break;
 								default : echo 'Undefined';
 									break;
@@ -214,7 +214,16 @@
 					</tr>
 					<tr>
 						<td><strong>Payment option:</strong>  </td>
-						<td><?php echo $payment;?></td>
+						<td><?php switch ($payment){
+								case 0: echo 'Cash';
+									break;
+								case 1: echo 'Card';
+									break;
+								case 2: echo 'Both cash and card';
+									break;
+								default : echo 'Undefined';
+									break;
+							}?></td>
 					</tr>
 					<tr>
 						<td><strong>Home delivery:</strong> </td>
@@ -237,11 +246,13 @@
 				<?php if(chkLogin()){ ?>
 				<strong>Rate:</strong>
 				<form>
-					ambience : <input type="number" name="taste" /><br />
-					ambience : <input type="number" name="ambience" /><br />
-					ambience : <input type="number" name="value_for_money" /><br />
-					ambience : <input type="number" name="service" /><br />
-					ambience : <input type="number" name="hygiene" /> <br />
+					<table>
+					<tr><td>taste           : </td><td><input type="number" name="taste" /></td></tr>
+					<tr><td>ambience        : </td><td><input type="number" name="ambience" /></td></tr>
+					<tr><td>value for money : </td><td><input type="number" name="value_for_money" /></td></tr>
+					<tr><td>service         : </td><td><input type="number" name="service" /></td></tr>
+					<tr><td>hygiene         : </td><td><input type="number" name="hygiene" /></td></tr>
+					</table>
 					<input type="submit" class="btn" value="rate" name="rate" />
 				</form>
 				<form>
