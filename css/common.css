@@ -1,0 +1,51 @@
+/*
+* Common styles
+*/
+root { 
+    display: block;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+/*	padding: 5% 5% 5% 5%;*/
+/*	background: #ffc457;*/
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#bfa230), to(#fff));*/
+	/*background: -moz-linear-gradient(top,  #ffc457,  #fff);*/
+	margin: 0px;
+	padding: 0px;
+}
+
+#header {
+	/*padding: 5% 5% 5% 5%;*/
+	/*background: #5D784B;*/
+	/*max-width: 100%;*/
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#fff));*/
+	/*background: -moz-linear-gradient(top,  #000,  #000C04);*/
+	height: 10%;
+}
+
+#content {
+	/*margin: 15% 15% 15% 9%;*/
+	height: 70%;
+}
+
+
+#logo {
+	/*color: #ffffff;*/
+	padding-left: 10px;
+}
+
+.btnauth {
+	margin: 25px 5px 0 5px;
+}
+
+#links, #company {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#footer {
+}
