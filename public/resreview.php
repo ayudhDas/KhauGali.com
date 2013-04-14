@@ -6,6 +6,15 @@
 	if(!isset($_GET['resid'])){
 		redirectTo('home.php');
 	}
+	if(isset($_POST['rev-submit'])){
+		$connection = dbConnect();
+		$rid = $_GET['resid'];
+		$review = $_POST['review'];
+		$uname = $_SESSION['username'];
+		$query = "insert into reviews values('$uname',$rid, '$review')";
+		$t = mysql_query($query,$connection);
+		confirmQuery($t);
+	}
 	$resid = $_GET['resid'];
 	$connection = dbConnect();
 	$query = "select * from restaurant where res_id=$resid";
@@ -149,7 +158,8 @@
 						</div>
 					</div>
 						<br />
-						<div class="span8" style="margin-left: 170px">
+						<br/>
+						<div class="span8" style="margin-left: 250px">
 						<?php echo '<pre>'.$row['review'].'</pre>'; ?>
 					</div>
 						<br />
@@ -160,7 +170,7 @@
 				?>
 				<?php if(chkLogin()){ ?>
 				<hr/>
-				<form>
+				<form action="resreview.php?resid=<?php echo $resid;?>" method="post">
 					<strong>Write a review:</strong>
 					<br/>
 					<textarea rows="6" name="review"></textarea>

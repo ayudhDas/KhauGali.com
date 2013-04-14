@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2013 at 11:19 PM
+-- Generation Time: Apr 13, 2013 at 07:49 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `khaugali_v1`
+-- Database: `khaugali_experimental`
 --
 
 -- --------------------------------------------------------
@@ -37,11 +37,11 @@ CREATE TABLE IF NOT EXISTS `been_to` (
 --
 
 INSERT INTO `been_to` (`username`, `rest_id`) VALUES
-('A', 4),
-('D', 4),
-('D', 6),
-('M', 1),
-('M', 3);
+('Ayudh', 4),
+('Devanshi', 4),
+('Devanshi', 6),
+('Pepper', 1),
+('Pepper', 3);
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `cuisines` (
   `cuisine_id` int(11) NOT NULL AUTO_INCREMENT,
   `cuisine_name` varchar(50) NOT NULL,
   PRIMARY KEY (`cuisine_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `cuisines`
@@ -106,10 +106,10 @@ CREATE TABLE IF NOT EXISTS `favourite` (
 --
 
 INSERT INTO `favourite` (`username`, `rest_id`) VALUES
-('A', 4),
-('D', 4),
-('D', 6),
-('M', 3);
+('Ayudh', 4),
+('Devanshi', 4),
+('Devanshi', 6),
+('Pepper', 3);
 
 -- --------------------------------------------------------
 
@@ -129,9 +129,9 @@ CREATE TABLE IF NOT EXISTS `lives_in` (
 --
 
 INSERT INTO `lives_in` (`username`, `city_id`, `locality_name`) VALUES
-('A', 3, 'Infocity'),
-('D', 2, 'Dharnidhar cross roads'),
-('M', 1, 'Adajan');
+('Ayudh', 3, 'Infocity'),
+('Devanshi', 2, 'Dharnidhar cross roads'),
+('Pepper', 1, 'Adajan');
 
 -- --------------------------------------------------------
 
@@ -206,12 +206,13 @@ CREATE TABLE IF NOT EXISTS `rating` (
 --
 
 INSERT INTO `rating` (`username`, `rest_id`, `taste`, `ambience`, `value_for_money`, `service`, `hygiene`) VALUES
-('A', 4, 5, 5, 3, 4, 4),
-('D', 4, 4, 4, 3, 4, 3),
-('D', 6, 5, 5, 5, 5, 5),
-('M', 1, 4, 3, 4, 3, 3),
-('M', 2, 3, 4, 2, 3, 4),
-('M', 3, 5, 5, 3, 4, 4);
+('Ayudh', 4, 5, 5, 3, 4, 4),
+('Devanshi', 4, 4, 4, 3, 4, 3),
+('Devanshi', 6, 5, 5, 5, 5, 5),
+('Pepper', 1, 4, 3, 4, 3, 3),
+('Pepper', 2, 3, 4, 2, 3, 4),
+('Pepper', 3, 5, 5, 3, 4, 4),
+('user1', 1, 2, 2, 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -246,7 +247,7 @@ INSERT INTO `restaurant` (`res_id`, `restaurant_name`, `phone_number`, `email`, 
 (3, 'Saffron', '3333333333', NULL, 'City Plus Multiplex, Near ONGC colony, Piplod', 0, 0, 1, '350', '10:00-22:00', 1, 'saffron_menu', 2),
 (4, 'Sankalp', '4444444444', NULL, 'Anubhuti Complex, Dharnidhar Cross Roads', 0, 0, 1, '300', '10:00-22:00', 0, 'sankalp_menu', 2),
 (5, 'Pakvan', '5555555555', 'contactus@mcd.com', 'Drive In cross road, Drive In', 0, 0, 2, '500', '10:00-21:00', 1, 'pakvan_menu', 1),
-(6, 'Domino''s', '6666666666', 'talktous@dominos.com', 'Meghmalhar Complex, Near Fortune Inn Haveli, Sector 11', 2, 1, 2, '400', '10:00-23:00', 0, 'dominos_menu', 2);
+(6, 'Dominos', '6666666666', 'talktous@dominos.com', 'Meghmalhar Complex, Near Fortune Inn Haveli, Sector 11', 2, 1, 2, '400', '10:00-23:00', 0, 'dominos_menu', 2);
 
 -- --------------------------------------------------------
 
@@ -290,10 +291,11 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 --
 
 INSERT INTO `reviews` (`username`, `rest_id`, `review`) VALUES
-('D', 4, 'Good food. I like it. '),
-('m', 1, 'Good place for those who are compelled to eat out. Good taste. But, I think it is a little too oily at times.'),
-('M', 3, 'Good Food. '),
-('M', 6, 'Best Place Ever! :D');
+('Devanshi', 4, 'Good food. I like it. '),
+('Pepper', 1, 'Good place for those who are compelled to eat out. Good taste. But, I think it is a little too oily at times.'),
+('Pepper', 3, 'Good Food. '),
+('Pepper', 6, 'Best Place Ever! :D\r\nkdvnejrnverjkvnjkernvkernvkenvjeknvjkerv\r\nevlkenvjkenrjvenrv\r\ndfvwevnekjverkj vekj vjke\r\newjwevejkrv ewevbej vjke bvj\r\nvs wlev wke vkjwe vkjwe vkjwe vkw eewvj vkw vkjwvwvjw evjwv '),
+('user1', 1, 'nice service');
 
 -- --------------------------------------------------------
 
@@ -316,13 +318,13 @@ INSERT INTO `serves` (`cuisine_id`, `rest_id`) VALUES
 (1, 2),
 (2, 1),
 (2, 4),
-(2, 6),
 (3, 1),
 (3, 2),
 (3, 3),
 (3, 4),
 (3, 5),
 (4, 1),
+(4, 6),
 (4, 9),
 (5, 1),
 (5, 3),
@@ -365,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `suggested_restaurants` (
   `phone_number` int(11) DEFAULT NULL,
   `status` tinyint(4) NOT NULL,
   PRIMARY KEY (`sres_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `suggested_restaurants`
@@ -375,7 +377,8 @@ INSERT INTO `suggested_restaurants` (`sres_id`, `sres_name`, `address`, `phone_n
 (1, 'Barley Water', 'Infocity mall, near Gh 0', NULL, 2),
 (2, 'Gateway Taj', 'Sargam Shopping complex, Parle Point', 2147483647, 1),
 (3, 'Swati Snacks', 'Law Garder cross Roads ', NULL, 1),
-(4, 'Walk on Fire', 'Opposite Rajhans Multiplex, Hazira Road, Adajan', NULL, 0);
+(4, 'Walk on Fire', 'Opposite Rajhans Multiplex, Hazira Road, Adajan', NULL, 0),
+(5, 'Taj', 'near da-iict', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -389,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `profile_picture` varchar(200) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone_number` decimal(10,0) DEFAULT NULL,
-  `hashed_password` varchar(20) NOT NULL,
+  `hashed_password` varchar(100) NOT NULL,
   `joined` date NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -399,9 +402,15 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`username`, `name`, `profile_picture`, `email`, `phone_number`, `hashed_password`, `joined`) VALUES
-('A', 'Ayudh Das', 'ayd_pic', 'ayudh.d@gmail.com', '9999999999', 'xyz123', '2013-04-05'),
-('D', 'Devanshi Mehta', 'dev_pic', 'devanshimehta12@gmail.com', '8888888888', 'xyz123', '2013-04-05'),
-('M', 'Mruga Shastri', 'mrg_pic', 'mruga92@gmail,com', NULL, 'xyz123', '2013-04-04');
+('Ayudh', 'Ayudh Das', 'ayd_pic', 'ayudh.d@gmail.com', '9999999999', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-05'),
+('Devanshi', 'Devanshi Mehta', 'dev_pic', 'devanshimehta12@gmail.com', '8888888888', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-05'),
+('george', 'Devanshi Mehta', 'profilePic/default.png', 'raisinalmond@gmail.com', NULL, '9fd8de5fc2a7c2c0d469b2fff1afde4e5def37ba', '2013-04-12'),
+('Pepper', 'Mruga Shastri', 'profilePic/default.png', 'mruga92@gmail.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-04'),
+('user1', 'user1', 'profilePic/default.png', 'user1@abc.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-10'),
+('user2', 'user2', 'profilePic/default.png', 'user2@abc.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-10'),
+('user3', 'user3', 'profilePic/default.png', 'user3@abc.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-11'),
+('user4', 'user4', 'profilePic/default.png', 'user4@abc.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-11'),
+('user5', 'user5', 'profilePic/default.png', 'user5@abc.com', NULL, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '2013-04-11');
 
 -- --------------------------------------------------------
 
@@ -420,10 +429,10 @@ CREATE TABLE IF NOT EXISTS `wishes_to_go_to` (
 --
 
 INSERT INTO `wishes_to_go_to` (`username`, `rest_id`) VALUES
-('A', 3),
-('A', 5),
-('D', 2),
-('M', 5);
+('Ayudh', 3),
+('Ayudh', 5),
+('Devanshi', 2),
+('Pepper', 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

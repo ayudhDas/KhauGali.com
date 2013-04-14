@@ -134,9 +134,9 @@
 		<hr class="foot" />
 		<div id="footer" class="row-fluid">
 			<div class="span8" id="links">
-				<a href="">Home</a> &VerticalBar;
+				<a href="home.php">Home</a> &VerticalBar;
 				<a href="">About Khaugali.com</a> &VerticalBar;
-				<a href="">Suggest a Restaurant</a> &VerticalBar;
+				<a href="suggest.php">Suggest a Restaurant</a> &VerticalBar;
 				<a href="">Contact us</a> &VerticalBar;
 				<a href="">Privacy</a> &VerticalBar;
 				<a href="">Site map</a> 

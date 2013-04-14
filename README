@@ -1,0 +1,15 @@
+Installation instructions
+=============================
+
+copy the folder khaugali into the document root of webserver stack (WAMP or LAMP).
+import the sql dump placed in the folder 'sql_dump' in a database.
+Configure your database credentials in the file khaugali/include/constants.php
+
+start your apache and mysql daemon, and point browser to http://localhost/khaugali
+
+- IT 342 Web programming project
+Group 42
+
+Ayudh Das 		201001131
+Mruga Shastri 	201001167
+Devanshi Mehta 	201001173

@@ -8,6 +8,17 @@
 	}
 	$resid = $_GET['resid'];
 	$connection = dbConnect();
+	if(isset($_POST['rate'])){
+		$taste = $_POST['taste'];
+		$ambience = $_POST['ambience'];
+		$value_for_money = $_POST['value_for_money'];
+		$service = $_POST['service'];
+		$hygiene = $_POST['hygiene'];
+		$uname = $_SESSION['username'];
+		$q = "insert into rating values ('$uname', $resid, $taste, $ambience, $value_for_money, $service, $hygiene)";
+		$t = mysql_query($q, $connection);
+		confirmQuery($t);
+	}
 	$query = "select * from restaurant where res_id=$resid";
 	$resultset = mysql_query($query, $connection);
 	confirmQuery($resultset);
@@ -245,7 +256,7 @@
 				<hr />
 				<?php if(chkLogin()){ ?>
 				<strong>Rate:</strong>
-				<form>
+				<form action="resinfo.php?resid=<?php echo $resid; ?>" method="post">
 					<table>
 					<tr><td>taste           : </td><td><input type="number" name="taste" /></td></tr>
 					<tr><td>ambience        : </td><td><input type="number" name="ambience" /></td></tr>
@@ -255,13 +266,13 @@
 					</table>
 					<input type="submit" class="btn" value="rate" name="rate" />
 				</form>
-				<form>
+<!--				<form>
 					<strong>Write a review:</strong>
 					<br/>
 					<textarea rows="6" name="review"></textarea>
 					<br />
 					<button type="submit" class="btn" name="rev-submit">Submit</button>
-				</form>
+				</form>-->
 				<?php } ?>
 			</div>
 		</div>
